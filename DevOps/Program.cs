@@ -55,7 +55,7 @@ namespace DevOps {
 
             // Create a basic report with header and footer
             IReport basicReport = new BasicReport(sprints);
-            IReport reportWithHeaderAndFooter = new FooterDecorator(
+            FooterDecorator reportWithHeaderAndFooter = new FooterDecorator(
                                                     new HeaderDecorator(basicReport, companyName, projectName, version, date),
                                                     companyName, projectName, version, date);
 
@@ -64,9 +64,9 @@ namespace DevOps {
 
             Console.WriteLine("\n-----------------------");
             // Create instances of adapters
-            IMediaAdapter emailAdapter = new EmailAdapter();
-            IMediaAdapter slackAdapter = new SlackAdapter();
-            IMediaAdapter smsAdapter = new SmsAdapter();
+            EmailAdapter emailAdapter = new EmailAdapter();
+            SlackAdapter slackAdapter = new SlackAdapter();
+            SmsAdapter smsAdapter = new SmsAdapter();
 
             // Send notifications using each adapter
             emailAdapter.SendNotification("Hello from email adapter");
@@ -80,7 +80,7 @@ namespace DevOps {
                 new DeployAction { DeploymentTarget = "Production" },
                 new PackageAction { Dependencies = new List<string> { "Dependency1", "Dependency2" } },
                 new BuildAction { BuildType = "Release" },
-                new SourcesAction { GitURL = "https://github.com/yourrepository.git" },
+                new SourcesAction { GitURL = string.Empty },
                 new TestAction { TestFramework = "NUnit" },
                 new UtilityAction { Actions = new List<string> { "Action1", "Action2" } },
             };
