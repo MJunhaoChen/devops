@@ -9,7 +9,7 @@ namespace DevOps.Domain {
         public IBacklogState BacklogState { get; set; }
         public List<Message> Messages { get; set; }
 
-        public List<DiscussionComment> Comments;
+        public List<DiscussionComment> Comments { get; private set; }
         public Func<string, Type, int> NotificationCallBack { get; set; }
 
         public DiscussionThread(string title, BacklogItem relatedBackLogItem, List<Message> messages, IBacklogState backlogState) {

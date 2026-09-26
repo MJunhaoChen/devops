@@ -3,14 +3,14 @@ using DevOps.Strategies.Behaviours;
 
 namespace DevOps.Domain.Roles {
     public class Tester : Person {
-        public IRoleStrategy roleStrategy;
+        public IRoleStrategy RoleStrategy { get; private set; }
 
         public Tester() {
-            roleStrategy = new Testing();
+            RoleStrategy = new Testing();
         }
 
         public void Work() {
-            roleStrategy.PerformRole();
+            RoleStrategy.PerformRole();
         }
 
         public override void SendNotification(string message) {

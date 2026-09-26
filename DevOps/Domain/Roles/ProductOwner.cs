@@ -3,14 +3,14 @@ using DevOps.Strategies.Behaviours;
 
 namespace DevOps.Domain.Roles {
     public class ProductOwner : Person {
-        public IRoleStrategy roleStrategy;
+        private IRoleStrategy RoleStrategy { get; private set; }
 
         public ProductOwner() {
-            roleStrategy = new Managing();
+            RoleStrategy = new Managing();
         }
 
         public void Work() {
-            roleStrategy.PerformRole();
+            RoleStrategy.PerformRole();
         }
 
         public override void SendNotification(string message) {

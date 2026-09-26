@@ -3,13 +3,14 @@ using DevOps.Strategies.Behaviours;
 
 namespace DevOps.Domain.Roles {
     public class ScrumMaster : Person {
-        public IRoleStrategy roleStrategy;
+        public IRoleStrategy RoleStrategy { get; private set; }
+
         public ScrumMaster() {
-            roleStrategy = new Managing();
+            RoleStrategy = new Managing();
         }
 
         public void Work() {
-            roleStrategy.PerformRole();
+            RoleStrategy.PerformRole();
         }
 
         public override void SendNotification(string message) {

@@ -3,15 +3,14 @@ using DevOps.Strategies.Behaviours;
 
 namespace DevOps.Domain.Roles {
     public class LeadDeveloper : Person {
-
-        public IRoleStrategy roleStrategy;
+        public IRoleStrategy RoleStrategy { get; private set; }
 
         public LeadDeveloper() {
-            roleStrategy = new Managing();
+            RoleStrategy = new Managing();
         }
 
         public void Work() {
-            roleStrategy.PerformRole();
+            RoleStrategy.PerformRole();
         }
 
         public override void SendNotification(string message) {
