@@ -2,7 +2,7 @@
     public abstract class ReportDecorator : IReport {
         protected IReport report;
 
-        public ReportDecorator(IReport report) {
+        protected ReportDecorator(IReport report) {
             this.report = report;
         }
 

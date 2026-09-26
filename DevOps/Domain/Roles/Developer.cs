@@ -3,14 +3,14 @@ using DevOps.Strategies.Behaviours;
 
 namespace DevOps.Domain.Roles {
     public class Developer : Person {
-        public IRoleStrategy roleStrategy { get; set; }
+        public IRoleStrategy RoleStrategy { get; set; }
 
         public Developer() {
-            roleStrategy = new Coding();
+            RoleStrategy = new Coding();
         }
 
         public void Work() {
-            roleStrategy.PerformRole();
+            RoleStrategy.PerformRole();
             mediaAdapter.SendNotification("Developer is working...");
         }
 

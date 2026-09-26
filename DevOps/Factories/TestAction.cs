@@ -3,7 +3,7 @@
 namespace DevOps.Factories {
     public class TestAction : IActionComponent, IActionFactory {
         public string TestFramework { get; set; }
-        public bool FinishedTests = false;
+        public bool FinishedTests { get; set; }
 
         public void AcceptVisitor(IActionVisitor visitor) {
             visitor.Visit(this);

@@ -9,7 +9,7 @@ namespace DevOps.Tests.Domain.Roles {
         public void Developer_Work_Should_PerformRoleAndSendNotification() {
             // Arrange
             var mockStrategy = new Mock<IRoleStrategy>();
-            var developer = new Developer { roleStrategy = mockStrategy.Object };
+            var developer = new Developer { RoleStrategy = mockStrategy.Object };
             var mockAdapter = new Mock<IMediaAdapter>();
             developer.SetMediaAdapter(mockAdapter.Object);
 
@@ -25,7 +25,7 @@ namespace DevOps.Tests.Domain.Roles {
         public void LeadDeveloper_Work_Should_PerformRole() {
             // Arrange
             var mockStrategy = new Mock<IRoleStrategy>();
-            var leadDeveloper = new LeadDeveloper { roleStrategy = mockStrategy.Object };
+            var leadDeveloper = new LeadDeveloper { RoleStrategy = mockStrategy.Object };
 
             // Act
             leadDeveloper.Work();
@@ -38,7 +38,7 @@ namespace DevOps.Tests.Domain.Roles {
         public void ProductOwner_Work_Should_PerformRole() {
             // Arrange
             var mockStrategy = new Mock<IRoleStrategy>();
-            var productOwner = new ProductOwner { roleStrategy = mockStrategy.Object };
+            var productOwner = new ProductOwner { RoleStrategy = mockStrategy.Object };
 
             // Act
             productOwner.Work();
@@ -51,7 +51,7 @@ namespace DevOps.Tests.Domain.Roles {
         public void ScrumMaster_Work_Should_PerformRole() {
             // Arrange
             var mockStrategy = new Mock<IRoleStrategy>();
-            var scrumMaster = new ScrumMaster { roleStrategy = mockStrategy.Object };
+            var scrumMaster = new ScrumMaster { RoleStrategy = mockStrategy.Object };
 
             // Act
             scrumMaster.Work();
@@ -64,7 +64,7 @@ namespace DevOps.Tests.Domain.Roles {
         public void Tester_Work_Should_PerformRole() {
             // Arrange
             var mockStrategy = new Mock<IRoleStrategy>();
-            var tester = new Tester { roleStrategy = mockStrategy.Object };
+            var tester = new Tester { RoleStrategy = mockStrategy.Object };
 
             // Act
             tester.Work();
