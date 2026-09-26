@@ -3,7 +3,7 @@ using DevOps.Strategies.Behaviours;
 
 namespace DevOps.Domain.Roles {
     public class ScrumMaster : Person {
-        public IRoleStrategy RoleStrategy { get; private set; }
+        public IRoleStrategy RoleStrategy { get; set; }
 
         public ScrumMaster() {
             RoleStrategy = new Managing();

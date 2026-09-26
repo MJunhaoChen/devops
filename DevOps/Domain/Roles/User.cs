@@ -1,6 +1,6 @@
 ﻿namespace DevOps.Domain.Roles {
     public class User : Person {
-        static public void Use() {
+        public void Use() {
             Console.WriteLine("Using...");
         }
 
