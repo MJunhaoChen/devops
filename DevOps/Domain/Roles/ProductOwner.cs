@@ -3,7 +3,7 @@ using DevOps.Strategies.Behaviours;
 
 namespace DevOps.Domain.Roles {
     public class ProductOwner : Person {
-        private IRoleStrategy RoleStrategy { get; private set; }
+        public IRoleStrategy RoleStrategy { get; private set; }
 
         public ProductOwner() {
             RoleStrategy = new Managing();
